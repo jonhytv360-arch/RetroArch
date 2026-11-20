@@ -48,6 +48,10 @@ jobs:
         distribution: 'temurin'
         cache: 'gradle'
 
+    - name: Add XMB icon theme (monochrome) to the APK assets
+      run: |
+        unzip -q -o "$GITHUB_WORKSPACE/xmb-monochrome.zip" -d pkg/android/phoenix/assets
+
     - name: Compile RA
       run: |
         cd pkg/android/phoenix
